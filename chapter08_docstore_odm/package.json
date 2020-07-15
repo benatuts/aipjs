@@ -1,0 +1,14 @@
+{
+    "name": "chapter08_docstore_odm",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node index.js",
+        "mongod": "mkdir -p ./mdb && mongod --dbpath ./mdb --bind_ip 127.0.0.1",
+        "sample_data": "mongo sample_data.js",
+        "sample_queries": "mongo sample_queries.js"
+    },
+    "dependencies": {
+        "express": "*",
+        "mongoose": "*"
+    }
+}

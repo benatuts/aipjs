@@ -1,0 +1,49 @@
+<h1>AIP team shopping list</h1>
+<h2>Current items:</h2>
+<p *ngIf="(items | async).length == 0; else hasItems">
+    No items are in the shopping list.
+</p>
+<ng-template #hasItems>
+    <table>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of items | async">
+                <td>{{item.icon}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.quantity}}</td>
+                <td>
+                    <ng-container *ngIf="item.isBuying; else notBuying">
+                        <button (click)="doPurchase(item)">Purchase</button>
+                    </ng-container>
+                    <ng-template #notBuying>
+                        <button (click)="doReady(item)">Ready to Purchase</button>
+                        <button (click)="doDelete(item)">Delete</button>
+                    </ng-template>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</ng-template>
+<h2>Add item:</h2>
+<p>
+    <label>
+        Description:
+        <input type="text" [(ngModel)]="description">
+    </label>
+</p>
+<p>
+    <label>
+        Quantity:
+        <input type="number" [(ngModel)]="quantity">
+    </label>
+</p>
+<p>
+    <button (click)="doAdd()">Add</button>
+</p>

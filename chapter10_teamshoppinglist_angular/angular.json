@@ -1,0 +1,37 @@
+{
+    "version": 1,
+    "projects": {
+        "teamshoppinglist": {
+            "root": "",
+            "sourceRoot": "src/ui",
+            "projectType": "application",
+            "architect": {
+                "build": {
+                    "builder": "@angular-devkit/build-angular:browser",
+                    "options": {
+                        "outputPath": "dist",
+                        "index": "src/ui/index.html",
+                        "main": "src/ui/main.ts",
+                        "polyfills": "src/ui/polyfills.ts",
+                        "tsConfig": "tsconfig.json",
+                        "aot": true,
+                        "assets": [],
+                        "styles": [],
+                        "scripts": []
+                    }
+                },
+                "serve": {
+                    "builder": "@angular-devkit/build-angular:dev-server",
+                    "options": {
+                        "browserTarget": "teamshoppinglist:build",
+                        "proxyConfig": "proxy.conf.json"
+                    }
+                }
+            }
+        }
+    },
+    "defaultProject": "teamshoppinglist",
+    "cli": {
+        "analytics": false
+    }
+}

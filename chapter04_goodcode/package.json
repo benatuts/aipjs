@@ -1,0 +1,11 @@
+{
+    "name": "chapter04_goodcode",
+    "version": "1.0.0",
+    "scripts": {
+        "1": "node example1.js",
+        "2": "node example2.js",
+        "3": "node example3.js",
+        "4": "node example4.js"
+    }
+  }
+  

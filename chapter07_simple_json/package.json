@@ -1,0 +1,12 @@
+{
+    "name": "chapter07_simple_json",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node index_with_spa.js",
+        "api": "node index.js",
+        "spa": "node index_with_spa.js"
+    },
+    "dependencies": {
+        "express": "*"
+    }
+}

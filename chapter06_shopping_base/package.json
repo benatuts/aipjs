@@ -1,0 +1,10 @@
+{
+    "name": "chapter06_shopping_base",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "express": "*"
+    }
+}

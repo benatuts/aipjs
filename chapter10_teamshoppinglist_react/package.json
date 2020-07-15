@@ -1,0 +1,24 @@
+{
+    "name": "chapter10_teamshoppinglist_react",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "webpack && node src/server/index.js",
+        "build": "webpack",
+        "watch": "webpack -w"
+    },
+    "dependencies": {
+        "@babel/core": "^7.9.6",
+        "@babel/plugin-transform-runtime": "^7.9.6",
+        "@babel/preset-env": "^7.9.6",
+        "@babel/preset-react": "^7.9.4",
+        "@babel/runtime": "^7.9.6",
+        "babel-loader": "^8.1.0",
+        "express": "^4.17.1",
+        "html-webpack-plugin": "^4.3.0",
+        "react": "^16.13.1",
+        "react-dom": "^16.13.1",
+        "uuid": "^8.1.0",
+        "webpack": "^4.43.0",
+        "webpack-cli": "^3.3.11"
+    }
+}

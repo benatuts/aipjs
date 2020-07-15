@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<title>JSON fetch example</title>
+<h1>JSON fetch example</h1>
+<p id="server_status">Waiting for server...</p>
+
+<script>
+    // Helper for setting the status
+    function setStatus(message) {
+        server_status.innerText = message;
+    }
+
+    // ---------------------------------
+    // Fetch without error handling
+    // ---------------------------------
+    /*
+    fetch('/api/items')
+        .then(response => response.json())
+        .then(as_json => setStatus(`${as_json.length} items received`));
+    */
+
+    // ---------------------------------
+    // Fetch with error handling
+    // ---------------------------------
+    fetch('/api/items')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(response.statusText);
+            }
+            return response.json();
+        })
+        .then(as_json => setStatus(`${as_json.length} items received`))
+        .catch(error => setStatus(`An error occurred: ${error}`));
+
+</script>

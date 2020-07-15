@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<title>AIP shopping list</title>
+<h1>AIP shopping list</h1>
+<h3>Current items:</h3>
+<div id="someItems" style="display: none;">
+    <ul id="itemsList"></ul>
+    <p>Total quantity of units: <span id="totalField"></span></span></p>
+</div>
+<div id="noItems">
+    <p>No items have been added.</p>
+</div>
+<h3>Add item:</h3>
+<form>
+    <p>
+        <label>Description:
+            <input type="text" id="descriptionField">
+        </label>
+    </p>
+    <p>
+        <label>Quantity:
+            <input type="number" id="quantityField">
+        </label>
+    </p>
+    <p>
+        <button onclick="return handleAddItem();">Add Item</button>
+    </p>
+</form>
+
+<script>
+    // ---------------------------------------
+    // Services to communicate with the server
+    // ---------------------------------------
+
+    // Find all items in the shopping list
+    function queryItems(callback) {
+        fetch('/api/items')
+        .then(response => response.json())
+        .then(result => callback(result.items, result.total));
+    }
+
+    // Create a shopping list from a descriptin and an integer quantity
+    function createItem(description, quantity, callback) {
+        fetch(
+            '/api/items',
+            {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ description, quantity})
+            }
+        )
+        .then(response => callback());
+    }
+
+    // ---------------------------------------
+    // Presentation logic
+    // ---------------------------------------
+    //
+    // Note: I am using plain JavaScript.
+    //       This code should be replaced with React or Angular!
+    //
+
+    // Update the list of shopping list items
+    function updateItems() {
+        queryItems((items, total) => {
+            if (items.length > 0) {
+                // Show the result list
+                noItems.style.display = "none";
+                someItems.style.display = "block";
+        
+                // Clear the current items
+                itemsList.innerText = '';
+        
+                // Add all the children again
+                for (let item of items) {
+                    let child = document.createElement('li');
+                    child.innerText = item.quantity + ' units of ' + item.description;
+                    itemsList.appendChild(child);
+                }
+                
+                // Set the total
+                totalField.innerText = total;
+            } else {
+                // Hide the result list
+                noItems.style.display = "block";
+                someItems.style.display = "none";
+            }
+        });
+    }
+
+    // Handle form click to add an item
+    function handleAddItem() {
+        let description = descriptionField.value;
+        let quantity = parseInt(quantityField.value);
+        createItem(description, quantity, () => updateItems());
+
+        // Cancel automatic form submission
+        return false;
+    }
+
+    // Perform an initial request on startup
+    updateItems();
+</script>

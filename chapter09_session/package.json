@@ -1,0 +1,12 @@
+{
+    "name": "chapter09_session",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node index.js",
+        "login": "node index_with_login.js"
+    },
+    "dependencies": {
+        "express": "*",
+        "express-session": "*"
+    }
+}

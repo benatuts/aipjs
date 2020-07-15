@@ -1,0 +1,17 @@
+{
+    "name": "chapter08_sql_raw",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node index.js",
+        "initdb": "initdb -D ./pgdb/",
+        "postgres": "postgres -D ./pgdb/ -k ''",
+        "schema": "psql -h localhost -f schema.sql postgres",
+        "sample_data": "psql -h localhost -f sample_data.sql postgres",
+        "sample_queries": "psql -h localhost -f sample_queries.sql postgres",
+        "drop": "psql -h localhost -f drop.sql postgres"
+    },
+    "dependencies": {
+        "express": "*",
+        "pg": "*"
+    }
+}

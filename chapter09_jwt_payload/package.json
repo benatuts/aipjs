@@ -1,0 +1,12 @@
+{
+    "name": "chapter09_jwt_payload",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "body-parser": "*",
+        "express": "*",
+        "jsonwebtoken": "*"
+    }
+}

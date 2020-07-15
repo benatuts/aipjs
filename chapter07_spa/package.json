@@ -1,0 +1,12 @@
+{
+    "name": "chapter07_spa",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node index.json"
+    },
+    "dependencies": {
+        "body-parser": "*",
+        "express": "*"
+    }
+  }
+  

@@ -1,0 +1,15 @@
+{
+    "name": "chapter12_mapreduce",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node index.js",
+        "server1": "node server1.js",
+        "server2": "node server2.js",
+        "server3": "node server3.js"
+    },
+    "dependencies": {
+        "delay": "*",
+        "express": "*",
+        "node-fetch": "*"
+    }
+}

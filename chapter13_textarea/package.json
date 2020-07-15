@@ -1,0 +1,12 @@
+{
+    "name": "chapter13_textarea",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "body-parser": "*",
+        "escape-html": "*",
+        "express": "*"
+    }
+}

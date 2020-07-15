@@ -1,0 +1,15 @@
+{
+    "name": "chapter07_async",
+    "version": "1.0.0",
+    "scripts": {
+        "callback_countdown": "node callback_countdown.js",
+        "delay_promises": "node delay_promises.js",
+        "async_countdown": "node async_countdown.js",
+        "nodejs_statuses": "node nodejs_statuses.js",
+        "python_statuses": "python3 python_statuses.py"
+    },
+    "dependencies": {
+        "delay": "*",
+        "node-fetch": "*"
+    }
+}
