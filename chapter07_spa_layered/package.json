@@ -2,11 +2,11 @@
     "name": "chapter07_spa_layered",
     "version": "1.0.0",
     "scripts": {
-        "start": "node index.json"
+        "start": "node index.js"
     },
     "dependencies": {
         "body-parser": "*",
         "express": "*"
     }
-  }
+}
   
